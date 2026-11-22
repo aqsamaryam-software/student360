@@ -10,7 +10,7 @@ const icons = {
 const resources = [
   { type: "Past Paper", title: "Object-Oriented Programming", meta: "Spring 2024 • 42 KB", category: "Past Papers", description: "Previous examination paper for OOP." },
   { type: "Past Paper", title: "Data Structures & Algorithms", meta: "Fall 2023 • 38 KB", category: "Past Papers", description: "DSA theory and practical examination paper." },
-  { type: "Notes", title: "Software Requirements Engineering", meta: "Semester 5 • 1.2 MB", category: "Notes", description: "Requirements elicitation and modeling notes." },
+  { type: "Notes", title: "Computer Architecture", meta: "Semester 3 • 1.2 MB", category: "Notes", description: "Processor organization and architecture notes." },
   { type: "Notes", title: "Database Systems", meta: "Semester 4 • 860 KB", category: "Notes", description: "SQL, normalization and transaction notes." },
   { type: "Past Paper", title: "Operating Systems", meta: "Spring 2023 • 56 KB", category: "Past Papers", description: "Processes, memory and file system paper." },
   { type: "Notes", title: "Computer Networks", meta: "Semester 6 • 930 KB", category: "Notes", description: "Network layers, protocols and security notes." }
@@ -88,7 +88,7 @@ function shell(content) {
       <div class="sidebar-footer">
         <div class="student-mini">
           <div class="avatar">ST</div>
-          <div><strong>${sessionStorage.getItem("gu-demo-user") || "Student"}</strong><span>Software Engineering</span></div>
+          <div><strong>${sessionStorage.getItem("gu-demo-user") || "Student"}</strong><span>Computer Science &amp; IT</span></div>
         </div>
         <button class="nav-link" id="logout-btn" style="width:100%;border:0;background:none;color:rgba(255,255,255,.68);cursor:pointer">${icons.logout}<span>Sign out</span></button>
       </div>
@@ -97,7 +97,7 @@ function shell(content) {
       <header class="topbar">
         <div style="display:flex;align-items:center">
           <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu">☰</button>
-          <div class="topbar-title"><strong>${labels[route] || "Student Portal"}</strong><span>Software Engineering Department</span></div>
+          <div class="topbar-title"><strong>${labels[route] || "Student Portal"}</strong><span>Department of Computer Science &amp; IT</span></div>
         </div>
         <div class="top-actions"><button class="icon-btn" aria-label="Notifications">${icons.bell}</button></div>
       </header>
@@ -121,14 +121,14 @@ function homePage() {
   </div>`).join("");
 
   return shell(`<div class="page-head">
-      <div><div class="eyebrow">Software Engineering</div><h1>Good afternoon</h1></div>
+      <div><div class="eyebrow">Computer Science &amp; IT</div><h1>Good afternoon</h1></div>
     </div>
     <section class="hero-card">
       <div class="hero-copy"><div class="eyebrow" style="color:#cfdfd6">Department portal</div><h2>Your semester, all in one place.</h2><p>Access learning resources, examination material and department information for Ghazi University students.</p></div>
-      <div class="hero-stat"><strong>BS</strong><span>Software Engineering</span></div>
+      <div class="hero-stat"><strong>BS</strong><span>CS &amp; IT</span></div>
     </section>
     <section class="stats-grid">
-      <div class="stat-card"><span>Degree</span><strong>BS SE</strong></div>
+      <div class="stat-card"><span>Programs</span><strong>CS &amp; IT</strong></div>
       <div class="stat-card"><span>Duration</span><strong>4 Years</strong></div>
       <div class="stat-card"><span>Semesters</span><strong>8</strong></div>
       <div class="stat-card"><span>Resources</span><strong>${resources.length}</strong></div>
@@ -144,12 +144,12 @@ function homePage() {
 }
 
 function departmentPage() {
-  return shell(`<div class="page-head"><div><div class="eyebrow">About us</div><h1>Software Engineering</h1></div></div>
+  return shell(`<div class="page-head"><div><div class="eyebrow">About us</div><h1>Computer Science &amp; Information Technology</h1></div></div>
     <div class="dept-layout">
       <section class="about-card">
         <div class="eyebrow" style="color:#cfdfd6">Department at Ghazi University</div>
         <h2>Building capable software professionals.</h2>
-        <p>The BS Software Engineering program introduces students to systematic software development, programming, analysis, design, testing and project delivery. Final curriculum and course details should be checked against the university's official academic document.</p>
+        <p>The Department of Computer Science &amp; Information Technology offers study in computing, programming, information systems, networking and emerging technologies. Final curriculum and course details should be checked against the university's official academic documents.</p>
         <div class="feature-list">
           <div class="feature"><strong>4-year degree</strong><span>Undergraduate program</span></div>
           <div class="feature"><strong>8 semesters</strong><span>Structured study plan</span></div>

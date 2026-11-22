@@ -1,6 +1,6 @@
 # GU Student Hub
 
-A static, mobile-friendly student portal for the Software Engineering department at Ghazi University, Dera Ghazi Khan.
+A static, mobile-friendly student portal for the Computer Science and Information Technology department at Ghazi University, Dera Ghazi Khan.
 
 ## Features
 
