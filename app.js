@@ -17,11 +17,11 @@ const resources = [
 ];
 
 const programs = [
-  { name: "BS Computer Science", shortName: "BS CS", duration: "4 years" },
-  { name: "BS Computing (AI)", shortName: "BS AI", duration: "4 years" },
-  { name: "BS Data Science", shortName: "BS DS", duration: "4 years" },
-  { name: "BS Information Technology", shortName: "BS IT", duration: "4 years" },
-  { name: "BS Software Engineering", shortName: "BS SE", duration: "4 years" }
+  { name: "BS Computer Science", shortName: "BS CS", duration: "4 years", accent: "#4d78b8" },
+  { name: "BS Computing (AI)", shortName: "BS AI", duration: "4 years", accent: "#8b64b5" },
+  { name: "BS Data Science", shortName: "BS DS", duration: "4 years", accent: "#cf7b43" },
+  { name: "BS Information Technology", shortName: "BS IT", duration: "4 years", accent: "#2f8a78" },
+  { name: "BS Software Engineering", shortName: "BS SE", duration: "4 years", accent: "#b75a68" }
 ];
 
 const departmentContacts = [
@@ -133,7 +133,7 @@ function homePage() {
     <div><strong>${r.title}</strong><span>${r.meta}</span></div>
     <button class="download-btn" aria-label="Download ${r.title}" onclick="alert('Add the real PDF or document link in app.js')">↓</button>
   </div>`).join("");
-  const programCards = programs.map(program => `<article class="home-program-card">
+  const programCards = programs.map(program => `<article class="home-program-card" style="--program-accent:${program.accent}">
     <span class="home-program-code">${program.shortName}</span>
     <strong>${program.name}</strong>
   </article>`).join("");
@@ -178,7 +178,7 @@ function departmentPage() {
     </section>
     <div class="panel-head programs-heading"><h3>Programs Offered</h3><span>5 undergraduate programs</span></div>
     <div class="program-grid">
-      ${programs.map(program => `<article class="program-card"><div class="program-short">${program.shortName}</div><div><strong>${program.name}</strong><span>${program.duration} • Undergraduate</span></div></article>`).join("")}
+      ${programs.map(program => `<article class="program-card" style="--program-accent:${program.accent}"><div class="program-short">${program.shortName}</div><div><strong>${program.name}</strong><span>${program.duration} • Undergraduate</span></div></article>`).join("")}
     </div>
     <div class="section-grid department-bottom">
       <section class="panel"><div class="panel-head"><h3>Department Contacts</h3></div>
