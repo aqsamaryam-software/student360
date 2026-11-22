@@ -17,11 +17,11 @@ const resources = [
 ];
 
 const programs = [
-  { name: "BS Computer Science", shortName: "BS CS", duration: "4 years", accent: "#4d78b8" },
-  { name: "BS Artificial Intelligence", shortName: "BS AI", duration: "4 years", accent: "#8b64b5" },
-  { name: "BS Data Science", shortName: "BS DS", duration: "4 years", accent: "#cf7b43" },
-  { name: "BS Information Technology", shortName: "BS IT", duration: "4 years", accent: "#2f8a78" },
-  { name: "BS Software Engineering", shortName: "BS SE", duration: "4 years", accent: "#b75a68" }
+  { name: "BS Computer Science", shortName: "BS CS", duration: "4 years", accent: "#12372a" },
+  { name: "BS Artificial Intelligence", shortName: "BS AI", duration: "4 years", accent: "#1f6750" },
+  { name: "BS Data Science", shortName: "BS DS", duration: "4 years", accent: "#3f846a" },
+  { name: "BS Information Technology", shortName: "BS IT", duration: "4 years", accent: "#8b6b32" },
+  { name: "BS Software Engineering", shortName: "BS SE", duration: "4 years", accent: "#b58a45" }
 ];
 
 const departmentContacts = [
