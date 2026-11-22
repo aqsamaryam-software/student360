@@ -46,7 +46,7 @@ const app = document.getElementById("app");
 
 function brand() {
   return `<div class="brand">
-    <div class="brand-mark">GU</div>
+    <div class="brand-mark"><img src="./university-logo.png" alt="Ghazi University logo" /></div>
     <div class="brand-text"><strong>Ghazi University</strong><span>Dera Ghazi Khan</span></div>
   </div>`;
 }
