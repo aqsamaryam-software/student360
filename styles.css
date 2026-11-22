@@ -186,6 +186,86 @@ a { color: inherit; text-decoration: none; }
 .feature span { margin-top: 4px; color: rgba(255,255,255,.58); font-size: 11px; }
 .semester-list { display: grid; gap: 8px; }
 .semester { display: flex; justify-content: space-between; align-items: center; height: 48px; padding: 0 13px; border-radius: 9px; background: var(--cream); font-size: 13px; }
+.department-summary {
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+.department-leaders {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+}
+.department-leaders div {
+  padding: 13px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+}
+.department-leaders span, .department-leaders strong { display: block; }
+.department-leaders span { margin-bottom: 5px; color: rgba(255,255,255,.58); font-size: 11px; }
+.department-leaders strong { font-size: 13px; }
+.programs-heading { margin: 4px 0 12px; }
+.programs-heading span, .panel-head > span { color: var(--muted); font-size: 11px; }
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.program-card {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 10px;
+  min-height: 92px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+}
+.program-short {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--green-700);
+  background: var(--green-100);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+.program-card strong, .program-card span { display: block; }
+.program-card strong { font-size: 12px; line-height: 1.35; }
+.program-card span { margin-top: 5px; color: var(--muted); font-size: 10px; }
+.department-bottom { margin-top: 16px; }
+.contact-list { display: grid; }
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  border-bottom: 1px solid var(--line);
+}
+.contact-row:last-child { border-bottom: 0; }
+.contact-row strong, .contact-row span { display: block; }
+.contact-row strong { font-size: 13px; }
+.contact-row span { margin-top: 3px; color: var(--muted); font-size: 11px; }
+.contact-row a { color: var(--green-700); font-size: 12px; font-weight: 700; white-space: nowrap; }
+.contact-directory { margin-top: 16px; }
+.contact-table { width: 100%; }
+.contact-table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 150px;
+  align-items: center;
+  min-height: 52px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.contact-table-row:last-child { border-bottom: 0; }
+.contact-table-head { min-height: 38px; color: var(--muted); font-size: 11px; }
+.contact-table-row a { color: var(--green-700); font-weight: 700; }
 .empty-state { grid-column: 1 / -1; padding: 42px; text-align: center; border: 1px dashed var(--line); border-radius: 14px; color: var(--muted); background: var(--white); }
 .menu-btn { display: none; }
 
@@ -194,6 +274,7 @@ a { color: inherit; text-decoration: none; }
   .resource-grid { grid-template-columns: repeat(2, 1fr); }
   .people-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .program-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 760px) {
   .login-shell { grid-template-columns: 1fr; }
@@ -220,11 +301,18 @@ a { color: inherit; text-decoration: none; }
   .hero-stat { display: none; }
   .section-grid, .dept-layout { grid-template-columns: 1fr; }
   .resource-grid { grid-template-columns: 1fr; }
+  .department-summary { grid-template-columns: 1fr; }
+  .program-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-table-row { grid-template-columns: 1fr 1fr 110px; }
 }
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .people-grid { grid-template-columns: 1fr; }
   .feature-list { grid-template-columns: 1fr; }
+  .program-grid { grid-template-columns: 1fr; }
   .page-head { display: grid; }
   .search { max-width: none; }
+  .contact-row { align-items: start; padding: 10px 0; }
+  .contact-table-row { grid-template-columns: 1fr; gap: 4px; padding: 10px 0; }
+  .contact-table-head { display: none; }
 }

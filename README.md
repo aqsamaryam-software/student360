@@ -8,6 +8,7 @@ A static, mobile-friendly student portal for the Computer Science and Informatio
 - Department overview
 - Notes and past-paper catalog
 - Faculty and staff directory
+- Department programs, leadership and contact directory
 - Search and resource filters
 - Responsive GitHub Pages-ready layout
 

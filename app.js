@@ -16,16 +16,30 @@ const resources = [
   { type: "Notes", title: "Computer Networks", meta: "Semester 6 • 930 KB", category: "Notes", description: "Network layers, protocols and security notes." }
 ];
 
+const programs = [
+  { name: "BS Computer Science", shortName: "BS CS", duration: "4 years" },
+  { name: "BS Computing (AI)", shortName: "BS AI", duration: "4 years" },
+  { name: "BS Data Science", shortName: "BS DS", duration: "4 years" },
+  { name: "BS Information Technology", shortName: "BS IT", duration: "4 years" },
+  { name: "BS Software Engineering", shortName: "BS SE", duration: "4 years" }
+];
+
+const departmentContacts = [
+  { name: "Dr. Hafiz Gulfam Ahmad Umar", role: "Chairperson / HOD", phone: "0333-5352392" },
+  { name: "Ms. Sehrish Zafar", role: "Departmental Focal Person", phone: "0314-6369199" }
+];
+
 const faculty = [
-  { name: "Head of Department", role: "Department Head", bio: "Please replace with the verified official profile.", initials: "HOD" },
-  { name: "Verified Faculty Member", role: "Assistant Professor", bio: "Profile details pending university confirmation.", initials: "AF" },
-  { name: "Verified Faculty Member", role: "Lecturer", bio: "Profile details pending university confirmation.", initials: "LF" },
-  { name: "Verified Faculty Member", role: "Lecturer", bio: "Profile details pending university confirmation.", initials: "LF" }
+  { name: "Dr. Hafiz Gulfam Ahmad Umar", role: "Associate Professor; Chairperson / HOD", bio: "Specialization: Data Security", initials: "HG" },
+  { name: "Mr. Mui-zzud-Din", role: "Lecturer", bio: "Specialization: CS & IT", initials: "MD" },
+  { name: "Mr. Muhammad Afzal", role: "Lecturer", bio: "Specialization: CS & IT", initials: "MA" },
+  { name: "Mr. M. Yasir Bhutta", role: "Lecturer", bio: "Specialization: IT", initials: "MY" },
+  { name: "Ms. Zaib-un-Nisa Khosa", role: "Lecturer", bio: "Specialization: CS & IT", initials: "ZN" },
+  { name: "Ms. Sehrish Zafar", role: "Visiting Lecturer; Focal Person", bio: "Specialization: IT", initials: "SZ" }
 ];
 
 const staff = [
-  { name: "Department Clerk", role: "Administrative Staff", bio: "For forms, schedules and departmental records.", initials: "DC" },
-  { name: "Computer Laboratory", role: "Lab Support", bio: "For laboratory access and practical support.", initials: "LAB" }
+  { name: "Ms. Sehrish Zafar", role: "Departmental Focal Person", bio: "Contact: 0314-6369199", initials: "SZ" }
 ];
 
 const app = document.getElementById("app");
@@ -52,7 +66,7 @@ function loginPage() {
         <div class="eyebrow">Ghazi University</div>
         <h2>Welcome back</h2>
         <p>Sign in to your student workspace.</p>
-        <label class="field"><span>University email or roll number</span><input id="login-id" required placeholder="e.g. se-1234" /></label>
+        <label class="field"><span>University email or roll number</span><input id="login-id" required placeholder="e.g. cs-1234" /></label>
         <label class="field"><span>Password</span><input id="login-password" required type="password" placeholder="Enter your password" /></label>
         <div class="login-options">
           <label><input type="checkbox" checked /> Remember me</label>
@@ -128,7 +142,7 @@ function homePage() {
       <div class="hero-stat"><strong>BS</strong><span>CS &amp; IT</span></div>
     </section>
     <section class="stats-grid">
-      <div class="stat-card"><span>Programs</span><strong>CS &amp; IT</strong></div>
+      <div class="stat-card"><span>Programs Offered</span><strong>${programs.length}</strong></div>
       <div class="stat-card"><span>Duration</span><strong>4 Years</strong></div>
       <div class="stat-card"><span>Semesters</span><strong>8</strong></div>
       <div class="stat-card"><span>Resources</span><strong>${resources.length}</strong></div>
@@ -138,24 +152,28 @@ function homePage() {
       <div class="panel"><div class="panel-head"><h3>Department notices</h3></div>
         <div class="notice"><strong>Semester information</strong><span>Official schedule pending verification</span></div>
         <div class="notice"><strong>Resource submissions</strong><span>Contribute verified past papers and notes</span></div>
-        <div class="notice"><strong>Faculty directory</strong><span>Official profile information is being reviewed</span></div>
+        <div class="notice"><strong>Department leadership</strong><span>HOD and focal person information added</span></div>
       </div>
     </section>`);
 }
 
 function departmentPage() {
   return shell(`<div class="page-head"><div><div class="eyebrow">About us</div><h1>Computer Science &amp; Information Technology</h1></div></div>
-    <div class="dept-layout">
-      <section class="about-card">
-        <div class="eyebrow" style="color:#cfdfd6">Department at Ghazi University</div>
-        <h2>Building capable software professionals.</h2>
-        <p>The Department of Computer Science &amp; Information Technology offers study in computing, programming, information systems, networking and emerging technologies. Final curriculum and course details should be checked against the university's official academic documents.</p>
-        <div class="feature-list">
-          <div class="feature"><strong>4-year degree</strong><span>Undergraduate program</span></div>
-          <div class="feature"><strong>8 semesters</strong><span>Structured study plan</span></div>
-          <div class="feature"><strong>Practical learning</strong><span>Labs and project work</span></div>
-          <div class="feature"><strong>Student support</strong><span>Faculty and department services</span></div>
-        </div>
+    <section class="about-card department-summary">
+      <div><div class="eyebrow" style="color:#cfdfd6">Faculty of Sciences</div><h2>Building capable computing professionals.</h2>
+      <p>The Department of Computer Science and Information Technology offers undergraduate programs in computing, artificial intelligence, data science, information technology and software engineering.</p></div>
+      <div class="department-leaders">
+        <div><span>Chairperson / HOD</span><strong>Dr. Hafiz Gulfam Ahmad Umar</strong></div>
+        <div><span>Departmental Focal Person</span><strong>Ms. Sehrish Zafar</strong></div>
+      </div>
+    </section>
+    <div class="panel-head programs-heading"><h3>Programs Offered</h3><span>5 undergraduate programs</span></div>
+    <div class="program-grid">
+      ${programs.map(program => `<article class="program-card"><div class="program-short">${program.shortName}</div><div><strong>${program.name}</strong><span>${program.duration} • Undergraduate</span></div></article>`).join("")}
+    </div>
+    <div class="section-grid department-bottom">
+      <section class="panel"><div class="panel-head"><h3>Department Contacts</h3></div>
+        <div class="contact-list">${departmentContacts.map(contact => `<div class="contact-row"><div><strong>${contact.name}</strong><span>${contact.role}</span></div><a href="tel:${contact.phone.replace(/[^0-9+]/g, "")}">${contact.phone}</a></div>`).join("")}</div>
       </section>
       <section class="panel"><div class="panel-head"><h3>Study plan</h3></div>
         <div class="semester-list">${[1,2,3,4,5,6,7,8].map(n => `<div class="semester"><strong>Semester ${n}</strong><span>→</span></div>`).join("")}</div>
@@ -194,9 +212,15 @@ function peoplePage() {
   function cards(list) {
     return list.map(p => `<article class="person-card"><div class="person-photo"><div class="initials">${p.initials}</div></div><div class="person-info"><strong>${p.name}</strong><span class="role">${p.role}</span><p>${p.bio}</p></div></article>`).join("");
   }
-  shell(`<div class="page-head"><div><div class="eyebrow">Directory</div><h1>Faculty & Staff</h1></div><input class="search" id="people-search" placeholder="Search directory..." /></div>
-    <div class="panel-head"><h3>Faculty</h3></div><div class="people-grid" id="faculty-grid">${cards(faculty)}</div>
-    <div class="panel-head" style="margin-top:24px"><h3>Administrative & Support Staff</h3></div><div class="people-grid" id="staff-grid">${cards(staff)}</div>`);
+  shell(`<div class="page-head"><div><div class="eyebrow">Directory</div><h1>Faculty & Staff</h1></div><input class="search" id="people-search" placeholder="Search faculty or specialization..." /></div>
+    <div class="panel-head"><h3>Faculty & Teachers</h3><span>${faculty.length} members</span></div><div class="people-grid" id="faculty-grid">${cards(faculty)}</div>
+    <div class="panel-head" style="margin-top:24px"><h3>Departmental Focal Person</h3></div><div class="people-grid" id="staff-grid">${cards(staff)}</div>
+    <section class="panel contact-directory"><div class="panel-head"><h3>Contact Details</h3></div>
+      <div class="contact-table" role="table" aria-label="Department contact details">
+        <div class="contact-table-row contact-table-head" role="row"><strong>Name</strong><strong>Designation</strong><strong>Contact Number</strong></div>
+        ${departmentContacts.map(contact => `<div class="contact-table-row" role="row"><span>${contact.name}</span><span>${contact.role}</span><a href="tel:${contact.phone.replace(/[^0-9+]/g, "")}">${contact.phone}</a></div>`).join("")}
+      </div>
+    </section>`);
 
   document.getElementById("people-search").addEventListener("input", (event) => {
     const query = event.target.value.toLowerCase().trim();
