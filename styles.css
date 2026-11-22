@@ -254,6 +254,31 @@ a { color: inherit; text-decoration: none; }
   gap: 24px;
   margin-bottom: 18px;
 }
+.leadership-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 150px;
+  margin-bottom: 18px;
+  padding: 18px 24px;
+  overflow: hidden;
+  border: 1px solid #d6e2da;
+  border-left: 5px solid var(--gold);
+  border-radius: 16px;
+  background: linear-gradient(110deg, #f8fbf8, #fffdf8);
+}
+.leadership-card img {
+  width: 118px;
+  height: 118px;
+  flex: 0 0 118px;
+  object-fit: cover;
+  object-position: center top;
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(18,55,42,.14);
+}
+.leadership-card h2 { margin: 7px 0 4px; font-family: "Manrope", sans-serif; font-size: 24px; }
+.leadership-card p { margin: 0; color: var(--muted); font-size: 13px; font-weight: 700; }
 .department-leaders {
   display: grid;
   align-content: center;
@@ -371,6 +396,7 @@ a { color: inherit; text-decoration: none; }
   .home-program-card > a { display: none; }
   .resource-grid { grid-template-columns: 1fr; }
   .department-summary { grid-template-columns: 1fr; }
+  .leadership-card { padding: 16px; }
   .program-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-table-row { grid-template-columns: 1fr 1fr 110px; }
 }
@@ -384,4 +410,7 @@ a { color: inherit; text-decoration: none; }
   .contact-row { align-items: start; padding: 10px 0; }
   .contact-table-row { grid-template-columns: 1fr; gap: 4px; padding: 10px 0; }
   .contact-table-head { display: none; }
+  .leadership-card { align-items: flex-start; gap: 14px; }
+  .leadership-card img { width: 82px; height: 82px; flex-basis: 82px; }
+  .leadership-card h2 { font-size: 18px; }
 }

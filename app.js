@@ -157,6 +157,10 @@ function homePage() {
 
 function departmentPage() {
   return shell(`<div class="page-head"><div><div class="eyebrow">About us</div><h1>Computer Science &amp; Information Technology</h1></div></div>
+    <section class="leadership-card">
+      <img src="./vice-chancellor.png" alt="Prof. Dr. Ashfaq Ahmad, Vice Chancellor of Ghazi University" />
+      <div><div class="eyebrow">University leadership</div><h2>Prof. Dr. Ashfaq Ahmad</h2><p>Vice Chancellor, Ghazi University</p></div>
+    </section>
     <section class="about-card department-summary">
       <div><div class="eyebrow" style="color:#cfdfd6">Faculty of Sciences</div><h2>Building capable computing professionals.</h2>
       <p>The Department of Computer Science and Information Technology offers undergraduate programs in computing, artificial intelligence, data science, information technology and software engineering.</p></div>
