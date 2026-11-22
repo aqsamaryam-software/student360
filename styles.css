@@ -120,10 +120,24 @@ a { color: inherit; text-decoration: none; }
 .content { padding: 34px 40px 60px; max-width: 1320px; margin: 0 auto; }
 .page-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
 .page-head h1 { margin: 6px 0 0; font-family: "Manrope", sans-serif; font-size: 34px; letter-spacing: -1px; }
+.department-link {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+}
+.department-link span { font-size: 16px; }
 .search { width: 280px; height: 44px; border: 1px solid var(--line); border-radius: 9px; padding: 0 14px; background: var(--white); outline: none; }
 .search:focus { border-color: var(--green-500); }
 .hero-card {
-  min-height: 260px; display: grid; grid-template-columns: 1.45fr .55fr; align-items: end;
+  min-height: 238px; display: grid; grid-template-columns: 1.45fr .55fr; align-items: end;
   overflow: hidden; border-radius: 18px; color: var(--white);
   background: linear-gradient(100deg, rgba(13,43,32,.96) 0%, rgba(13,43,32,.82) 58%, rgba(13,43,32,.25)), url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1500&q=85") right 43%/cover;
 }
@@ -133,6 +147,34 @@ a { color: inherit; text-decoration: none; }
 .hero-stat { justify-self: end; margin: 28px; padding: 22px; min-width: 170px; border: 1px solid rgba(255,255,255,.18); border-radius: 14px; background: rgba(255,255,255,.09); backdrop-filter: blur(10px); }
 .hero-stat strong { display: block; font-family: "Manrope", sans-serif; font-size: 34px; }
 .hero-stat span { color: rgba(255,255,255,.65); font-size: 12px; }
+.home-programs { margin-top: 16px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--white); }
+.home-programs .panel-head { margin-bottom: 12px; }
+.home-programs .panel-head h3 { margin-top: 5px; }
+.home-program-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.home-program-card {
+  min-height: 84px;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fbfcfa;
+}
+.home-program-code {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: var(--green-700);
+  background: var(--green-100);
+  font-size: 10px;
+  font-weight: 800;
+  text-align: center;
+}
+.home-program-card strong { font-size: 12px; line-height: 1.35; }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }
 .stat-card, .panel, .resource-card, .person-card { border: 1px solid var(--line); border-radius: 14px; background: var(--white); }
 .stat-card { padding: 20px; }
@@ -275,6 +317,7 @@ a { color: inherit; text-decoration: none; }
   .people-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .program-grid { grid-template-columns: repeat(3, 1fr); }
+  .home-program-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 760px) {
   .login-shell { grid-template-columns: 1fr; }
@@ -299,7 +342,9 @@ a { color: inherit; text-decoration: none; }
   .hero-copy { padding: 26px; }
   .hero-copy h2 { font-size: 29px; }
   .hero-stat { display: none; }
+  .department-link { display: none; }
   .section-grid, .dept-layout { grid-template-columns: 1fr; }
+  .home-program-grid { grid-template-columns: repeat(2, 1fr); }
   .resource-grid { grid-template-columns: 1fr; }
   .department-summary { grid-template-columns: 1fr; }
   .program-grid { grid-template-columns: repeat(2, 1fr); }
@@ -307,6 +352,7 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
+  .home-program-grid { grid-template-columns: 1fr; }
   .people-grid { grid-template-columns: 1fr; }
   .feature-list { grid-template-columns: 1fr; }
   .program-grid { grid-template-columns: 1fr; }

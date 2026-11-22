@@ -133,13 +133,22 @@ function homePage() {
     <div><strong>${r.title}</strong><span>${r.meta}</span></div>
     <button class="download-btn" aria-label="Download ${r.title}" onclick="alert('Add the real PDF or document link in app.js')">↓</button>
   </div>`).join("");
+  const programCards = programs.map(program => `<article class="home-program-card">
+    <span class="home-program-code">${program.shortName}</span>
+    <strong>${program.name}</strong>
+  </article>`).join("");
 
   return shell(`<div class="page-head">
       <div><div class="eyebrow">Computer Science &amp; IT</div><h1>Good afternoon</h1></div>
+      <a class="department-link" href="#department">View department <span>→</span></a>
     </div>
     <section class="hero-card">
       <div class="hero-copy"><div class="eyebrow" style="color:#cfdfd6">Department portal</div><h2>Your semester, all in one place.</h2><p>Access learning resources, examination material and department information for Ghazi University students.</p></div>
       <div class="hero-stat"><strong>BS</strong><span>CS &amp; IT</span></div>
+    </section>
+    <section class="home-programs">
+      <div class="panel-head"><div><div class="eyebrow">Faculty of Sciences</div><h3>Programs Offered</h3></div><a class="text-link" href="#department">View all</a></div>
+      <div class="home-program-grid">${programCards}</div>
     </section>
     <section class="stats-grid">
       <div class="stat-card"><span>Programs Offered</span><strong>${programs.length}</strong></div>
