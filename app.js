@@ -128,14 +128,10 @@ function shell(content) {
 }
 
 function homePage() {
-  const rows = resources.slice(0, 3).map(r => `<div class="resource-row">
-    <div class="file-icon">${r.type === "Notes" ? "PDF" : "PPR"}</div>
-    <div><strong>${r.title}</strong><span>${r.meta}</span></div>
-    <button class="download-btn" aria-label="Download ${r.title}" onclick="alert('Add the real PDF or document link in app.js')">↓</button>
-  </div>`).join("");
   const programCards = programs.map(program => `<article class="home-program-card" style="--program-accent:${program.accent}">
     <span class="home-program-code">${program.shortName}</span>
-    <strong>${program.name}</strong>
+    <div class="home-program-name"><strong>${program.name}</strong><span>${program.duration} • Undergraduate</span></div>
+    <a href="#department" aria-label="View ${program.name}">View program <b>→</b></a>
   </article>`).join("");
 
   return shell(`<div class="page-head">
@@ -156,14 +152,7 @@ function homePage() {
       <div class="stat-card"><span>Semesters</span><strong>8</strong></div>
       <div class="stat-card"><span>Resources</span><strong>${resources.length}</strong></div>
     </section>
-    <section class="section-grid">
-      <div class="panel"><div class="panel-head"><h3>Latest resources</h3><a class="text-link" href="#resources">View all</a></div><div class="resource-list">${rows}</div></div>
-      <div class="panel"><div class="panel-head"><h3>Department notices</h3></div>
-        <div class="notice"><strong>Semester information</strong><span>Official schedule pending verification</span></div>
-        <div class="notice"><strong>Resource submissions</strong><span>Contribute verified past papers and notes</span></div>
-        <div class="notice"><strong>Department leadership</strong><span>HOD and focal person information added</span></div>
-      </div>
-    </section>`);
+    `);
 }
 
 function departmentPage() {
