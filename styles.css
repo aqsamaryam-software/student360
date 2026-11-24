@@ -328,14 +328,14 @@ a { color: inherit; text-decoration: none; }
 .program-card strong, .program-card span { display: block; }
 .program-card strong { font-size: 12px; line-height: 1.35; }
 .program-card span { margin-top: 5px; color: var(--muted); font-size: 10px; }
-.department-bottom { margin-top: 16px; }
+.department-bottom { align-items: start; margin-top: 16px; }
 .contact-list { display: grid; }
 .contact-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  min-height: 58px;
+  min-height: 52px;
   border-bottom: 1px solid var(--line);
 }
 .contact-row:last-child { border-bottom: 0; }
