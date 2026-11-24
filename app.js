@@ -46,8 +46,8 @@ const app = document.getElementById("app");
 
 function brand() {
   return `<div class="brand">
-    <div class="brand-mark"><img src="./university-logo.png" alt="Ghazi University logo" /></div>
-    <div class="brand-text"><strong>Ghazi University</strong><span>Student 360 · Dera Ghazi Khan</span></div>
+    <div class="brand-mark"><img src="./student360-logo.jpeg" alt="Student 360 logo" /></div>
+    <div class="brand-text"><strong>Student 360</strong><span>Ghazi University · Dera Ghazi Khan</span></div>
   </div>`;
 }
 
@@ -63,7 +63,8 @@ function loginPage() {
     </section>
     <section class="login-panel">
       <form class="login-card" id="login-form">
-        <div class="eyebrow">Student 360</div>
+        <img class="student360-logo" src="./student360-logo.jpeg" alt="Student 360 — Your Campus. All In One Place." />
+        <div class="eyebrow">Ghazi University</div>
         <h2>Welcome back</h2>
         <p>Sign in to your student workspace.</p>
         <label class="field"><span>University email or roll number</span><input id="login-id" required placeholder="e.g. cs-1234" /></label>
