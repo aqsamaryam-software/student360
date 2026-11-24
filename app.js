@@ -47,7 +47,7 @@ const app = document.getElementById("app");
 function brand() {
   return `<div class="brand">
     <div class="brand-mark"><img src="./university-logo.png" alt="Ghazi University logo" /></div>
-    <div class="brand-text"><strong>Ghazi University</strong><span>Dera Ghazi Khan</span></div>
+    <div class="brand-text"><strong>Ghazi University</strong><span>Student 360 · Dera Ghazi Khan</span></div>
   </div>`;
 }
 
@@ -63,7 +63,7 @@ function loginPage() {
     </section>
     <section class="login-panel">
       <form class="login-card" id="login-form">
-        <div class="eyebrow">Ghazi University</div>
+        <div class="eyebrow">Student 360</div>
         <h2>Welcome back</h2>
         <p>Sign in to your student workspace.</p>
         <label class="field"><span>University email or roll number</span><input id="login-id" required placeholder="e.g. cs-1234" /></label>
@@ -73,7 +73,6 @@ function loginPage() {
           <a href="#home" onclick="document.querySelector('#login-id').focus()">Need help?</a>
         </div>
         <button class="primary-btn" type="submit">Sign in</button>
-        <div class="demo-note"><strong>Demo mode:</strong> This static login demonstrates the interface only. It does not create or verify accounts. Use Firebase or another secure authentication service before storing real student access.</div>
       </form>
     </section>
   </main>`;
@@ -81,7 +80,7 @@ function loginPage() {
   document.getElementById("login-form").onsubmit = (event) => {
     event.preventDefault();
     const id = document.getElementById("login-id").value.trim();
-    sessionStorage.setItem("gu-demo-user", id || "Student");
+    sessionStorage.setItem("student360-user", id || "Student");
     location.hash = "#home";
     render();
   };
@@ -102,7 +101,7 @@ function shell(content) {
       <div class="sidebar-footer">
         <div class="student-mini">
           <div class="avatar">ST</div>
-          <div><strong>${sessionStorage.getItem("gu-demo-user") || "Student"}</strong><span>Computer Science &amp; IT</span></div>
+          <div><strong>${sessionStorage.getItem("student360-user") || "Student"}</strong><span>Computer Science &amp; IT</span></div>
         </div>
         <button class="nav-link" id="logout-btn" style="width:100%;border:0;background:none;color:rgba(255,255,255,.68);cursor:pointer">${icons.logout}<span>Sign out</span></button>
       </div>
@@ -121,7 +120,7 @@ function shell(content) {
 
   document.getElementById("menu-btn")?.addEventListener("click", () => document.getElementById("sidebar").classList.toggle("open"));
   document.getElementById("logout-btn").addEventListener("click", () => {
-    sessionStorage.removeItem("gu-demo-user");
+    sessionStorage.removeItem("student360-user");
     location.hash = "";
     render();
   });
