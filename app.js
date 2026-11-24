@@ -135,7 +135,7 @@ function homePage() {
   </article>`).join("");
 
   return shell(`<div class="page-head">
-      <div><div class="eyebrow">Computer Science &amp; IT</div><h1>Good afternoon</h1></div>
+      <div><div class="eyebrow">Computer Science &amp; IT</div></div>
       <a class="department-link" href="#department">View department <span>→</span></a>
     </div>
     <section class="hero-card">
